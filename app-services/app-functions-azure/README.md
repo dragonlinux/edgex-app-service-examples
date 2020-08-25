@@ -49,7 +49,7 @@ If you are unfamiliar with the Azure IoT Hub, read the following documents first
    * Mount the /vault volume in your container with a resp-init.json available at `TokenPath`. This can be done by mounting the vault-config volume in the [EdgeX docker-compose yml file](https://github.com/edgexfoundry/developer-scripts/blob/master/releases/edinburgh/compose-files/docker-compose-edinburgh-1.0.1.yml)
    * Create the cert and key properties as secret at `CertPath` in vault. You can do this through Vault's web GUI at https://localhost:8200/ui/vault. To login to the GUI, you must obtain the value of "root_token" from the file pointed to by `TokenPath` in vault, for example:<br>
      ```
-     $ docker exec -it edgex-vault cat /vault/config/assets/resp-init.json
+     $ docker exec -it edgex-vault cat /vault/config/assets/resp-init.json | json_pp
      {
          "keys":[
              "e8c978b432a8d56316099d3080312807f53cd4cbadb15f694b010692370e0ea67d",
